@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Among List</title>
+  <link rel="stylesheet" href="css/stylesheet.css">
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <noscript><div class="noscript">You need to enable JavaScript to run this app.</div></noscript>
+
+  <script type="text/babel">
+    const container = document.getElementById('root');
+    const root = ReactDOM.createRoot(container);
+    root.render(<App/>);
+
+    function App() {
+        return(<div className="players">
+            <Player colour="Banana" />
+            <Player colour="Black" />
+            <Player colour="Blue" />
+            <Player colour="Brown" />
+            <Player colour="Coral" />
+            <Player colour="Cyan" />
+            <Player colour="Green" />
+            <Player colour="Grey" />
+            <Player colour="Lime" />
+            <Player colour="Maroon" />
+            <Player colour="Orange" />
+            <Player colour="Pink" />
+            <Player colour="Purple" />
+            <Player colour="Red" />
+            <Player colour="Rose" />
+            <Player colour="Tan" />
+            <Player colour="White" />
+            <Player colour="Yellow" />
+        </div>);
+    }
+
+    function Player({colour}) {
+        const [playerClass, setPlayerClass] = React.useState("player ng");
+        const [selectedButton, setSelectedButton] = React.useState("ng");
+
+        const handleClick = (status) => {
+            setPlayerClass(`player ${status}`);
+            setSelectedButton(status);
+        };
+
+        return(<div className={playerClass}>
+            <table border="1"><tbody>
+                <tr>
+                    <td className="colourName">{colour}</td>
+                    <td><button className={selectedButton === "clear" ? "active" : ""} onClick={() => handleClick("clear")}>Clear</button></td>
+                    <td><button className={selectedButton === "sus" ? "active" : ""} onClick={() => handleClick("sus")}>Sus</button></td>   
+                </tr>
+                <tr>
+                    <td className="notes"><input type="text" placeholder="notes" /></td>
+                    <td><button className={selectedButton === "ng" ? "active" : ""} onClick={() => handleClick("ng")}>N/G</button></td>
+                    <td><button className={selectedButton === "na" ? "active" : ""} onClick={() => handleClick("na")}>N/A</button></td>
+                </tr>
+            </tbody></table>
+        </div>);
+    }
+  </script>
+</body>
+</html>

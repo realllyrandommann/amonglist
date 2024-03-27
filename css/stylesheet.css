@@ -1,0 +1,66 @@
+.players {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.player {
+    display: block;
+}
+
+.sus .colourName {
+    background-color: #f8b8b8;
+}
+
+.ng {
+    color: #d8d8d8;
+}
+
+.na .colourName {
+    background-color: bisque;
+}
+
+.clear .colourName {
+    background-color: #add0ad;
+}
+
+button {
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    background-color: aliceblue;
+    border: none;
+}
+
+button:hover {
+    background-color: #d6dde3;
+}
+
+.active, .active:hover {
+    background-color: rgb(162, 180, 196);
+}
+
+.colourName {
+    width: 60px;
+}
+
+input {
+    width: 150px;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+tr, td {
+    padding: 0;
+}
+
+.colourName, .notes {
+    padding: 5px;
+}
+
+.ng .notes input {
+    visibility: hidden;
+}
